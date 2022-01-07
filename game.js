@@ -11,6 +11,7 @@ class Round {
 		document.getElementById("red").addEventListener("click", this.selectColor);
 		document.getElementById("yellow").addEventListener("click", this.selectColor);
 		document.getElementById("blue").addEventListener("click", this.selectColor);
+		document.getElementById("inside-circle").innerHTML = String(order.length+1);
 		order.push(String(colors[Math.floor(Math.random() * 4)]));
 		this.play();
 		index = 0;

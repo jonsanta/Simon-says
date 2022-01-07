@@ -7,12 +7,13 @@
 	<title>Simon Says</title>
 </head>
 <body>
-	<div id="bttn" onclick="newRound()">START</div>
-	<div id="circle">
-		<span id="green" class="color"></span>
-		<span id="red" class="color"></span>
-		<span id="yellow" class="color"></span>
-		<span id="blue" class="color"></span>
+	<div id="bttn"onclick="newRound()">START</div>
+	<div id="inside-circle" class="fix-border">0</div>
+	<div id="circle" class="fix-border">
+		<span id="green" class="color fix-border"></span>
+		<span id="red" class="color fix-border"></span>
+		<span id="yellow" class="color fix-border"></span>
+		<span id="blue" class="color fix-border"></span>
 	</div>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="game.js"></script>

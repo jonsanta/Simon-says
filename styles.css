@@ -5,6 +5,7 @@ body{
 	flex-direction: column;
 	height: 100vh;
 	background-color: #e5e4e2;
+	font-family: 'Roboto', sans-serif;
     align-items: center;
 	justify-content: center;
 	overflow-x: hidden;
@@ -19,11 +20,10 @@ body{
 	text-align: center;
 	border: solid 1px #080808;
 	border-radius: 25px;
-	font-family: 'Roboto', sans-serif;
 	color: #080808;
 	background-color: whitesmoke;
 	cursor: pointer;
-	z-index: 1;
+	z-index: 2;
 }
 
 #bttn:hover{
@@ -39,22 +39,34 @@ body{
 	height: 98vw;
     width: 98vw;
 	border-radius: 50%;
-	border: solid 4px #242124;
+	border: solid 1.5px #353839;
 	background-color: gray;
 	overflow: hidden;
 	max-height: 60vh;
     max-width: 60vh;
-	box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+}
+
+#inside-circle{
+	position: absolute;
+	display: flex;
+	height: 30vw;
+    width: 30vw;
+	border-radius: 50%;
+	border: solid 0.6px #353839;
+	background-color: #242124;
+	overflow: hidden;
+	max-height: 17vh;
+    max-width: 17vh;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 60px;
+	z-index: 1;
 }
 
 .color{
 	width: 50%;
 	height: 50%;
-	box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
 }
 
 #green{
@@ -85,9 +97,14 @@ body{
 	filter: brightness(70%);
 }
 
+.fix-border{
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
 .swal-title {
 	font-size: 2rem !important;
-	font-family: 'Roboto', sans-serif;
 }
 
 .swal-overlay {
