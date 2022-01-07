@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+body{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	background-color: #e5e4e2;
+    align-items: center;
+	justify-content: center;
+	overflow-x: hidden;
+}
+
+#bttn{
+	position: relative;
+	width: auto;
+	height: auto;
+	padding: 10px 20px;
+	font-size: 48px;
+	text-align: center;
+	border: solid 1px #080808;
+	border-radius: 25px;
+	font-family: 'Roboto', sans-serif;
+	color: #080808;
+	background-color: whitesmoke;
+	cursor: pointer;
+	z-index: 1;
+}
+
+#bttn:hover{
+	background-color: #353839;
+	transition: background-color 0.15s ease-in-out;
+}
+
+#circle{
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	height: 98vw;
+    width: 98vw;
+	border-radius: 50%;
+	border: solid 4px #242124;
+	background-color: gray;
+	overflow: hidden;
+	max-height: 60vh;
+    max-width: 60vh;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.color{
+	width: 50%;
+	height: 50%;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#green{
+	background-color: #3cb371;
+	border-right: solid 0.3px #353839;
+	border-bottom: solid 0.3px #353839;
+	filter: brightness(70%);
+}
+
+#red{
+	background-color: tomato;
+	border-left: solid 0.3px #353839;
+	border-bottom: solid 0.3px #353839;
+	filter: brightness(70%);
+}
+
+#yellow{
+	background-color: #fefe33;
+	border-right: solid 0.3px #353839;
+	border-top: solid 0.3px #353839;
+	filter: brightness(70%);
+}
+
+#blue{
+	background-color: #45b1e8;
+	border-left: solid 0.3px #353839;
+	border-top: solid 0.3px #353839;
+	filter: brightness(70%);
+}
+
+.swal-title {
+	font-size: 2rem !important;
+	font-family: 'Roboto', sans-serif;
+}
+
+.swal-overlay {
+	background-color: black;
+	transition: all 0.5s;
+}
+
+.swal-modal {
+	border-radius: 18px;
+}
