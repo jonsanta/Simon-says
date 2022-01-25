@@ -6,7 +6,7 @@ body{
 	height: 100vh;
 	background-color: #e5e4e2;
 	font-family: 'Roboto', sans-serif;
-    align-items: center;
+    	align-items: center;
 	justify-content: center;
 	overflow-x: hidden;
 }
@@ -37,31 +37,35 @@ body{
 	flex-direction: row;
 	flex-wrap: wrap;
 	height: 98vw;
-    width: 98vw;
+    	width: 98vw;
 	border-radius: 50%;
 	border: solid 1.5px #353839;
 	background-color: gray;
 	overflow: hidden;
 	max-height: 60vh;
-    max-width: 60vh;
+    	max-width: 60vh;
 }
 
 #inside-circle{
 	position: absolute;
 	display: flex;
 	height: 30vw;
-    width: 30vw;
+    	width: 30vw;
 	border-radius: 50%;
 	border: solid 0.6px #353839;
 	background-color: #242124;
 	overflow: hidden;
 	max-height: 17vh;
-    max-width: 17vh;
+    	max-width: 17vh;
 	align-items: center;
 	justify-content: center;
 	color: white;
 	font-size: 60px;
 	z-index: 1;
+	-webkit-user-select: none;     
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .color{
@@ -99,8 +103,8 @@ body{
 
 .fix-border{
 	box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    	-moz-box-sizing: border-box;
+    	-webkit-box-sizing: border-box;
 }
 
 .swal-title {
