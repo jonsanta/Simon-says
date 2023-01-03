@@ -15,7 +15,7 @@ body{
 	user-select: none;
 }
 
-#bttn{
+#start-btn{
 	position: relative;
 	width: auto;
 	height: auto;
@@ -30,7 +30,7 @@ body{
 	z-index: 2;
 }
 
-#bttn:hover{
+#start-btn:hover{
 	background-color: #353839;
 	transition: background-color 0.15s ease-in-out;
 }

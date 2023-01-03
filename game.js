@@ -1,87 +1,55 @@
-const startButton = document.getElementById('bttn')
+const colors = ["green", "red", "yellow", "blue"]
 
-const colors = ["green", "red", "yellow", "blue"];
-const order = new Array();
-
-var index = 0;
+var order = new Array()
+var index
 
 class Round {	
 	constructor(){
-		document.getElementById("green").addEventListener("click", this.selectColor);
-		document.getElementById("red").addEventListener("click", this.selectColor);
-		document.getElementById("yellow").addEventListener("click", this.selectColor);
-		document.getElementById("blue").addEventListener("click", this.selectColor);
-		document.getElementById("inside-circle").innerHTML = String(order.length+1);
-		order.push(String(colors[Math.floor(Math.random() * 4)]));
-		this.play();
-		index = 0;
+		colors.forEach(color => document.getElementById(color).addEventListener("click", this.selectColor))
+		order.push(String(colors[Math.floor(Math.random() * 4)]))
+		document.getElementById("inside-circle").innerHTML = String(order.length)
+		this.play()
 	}
 	
 	play(){
-		this.disableColorButtons();
-		for(let x = 0; x < order.length; x++)
-		{
-			setTimeout (() => this.light(x), 1000 * x);
-		}
+		colors.forEach(color => document.getElementById(color).style.pointerEvents = "none")
+		order.forEach((color, index) => { setTimeout (() => this.light(color, index), 1000 * index) })
 	}
 	
-	light(index){
-		document.getElementById(order[index]).style.transition = "all 0.4s";
-		document.getElementById(order[index]).style.filter = "brightness(110%)";
-		setTimeout (() => this.lightOff(index), 500);
+	light(color, index){
+		lightAnimation(color, "all 0.4s", "brightness(110%)")
+		setTimeout (() => {
+			lightAnimation(color, "all 0.4s", "brightness(70%)")
+			if(index + 1 == order.length) colors.forEach(color => document.getElementById(color).style.pointerEvents = "auto")
+		}, 500)
 	}
-	
-	lightOff(index){
-		document.getElementById(order[index]).style.transition = "all 0.4s";
-		document.getElementById(order[index]).style.filter = "brightness(70%)";
-		
-		if(index + 1 == order.length) this.enableColorButtons();
-	}
-	
-	
+
 	selectColor(evt){
 		if(index <= order.length){
 			let color = evt.currentTarget.id;
-			document.getElementById(color).style.filter = "brightness(110%)";
-			document.getElementById(color).style.filter = "all 0.2s";
-		
-			setTimeout(function(){
-				document.getElementById(color).style.filter = "brightness(70%)";
-			}, 200);
+			lightAnimation(color, "all 0.3s", "brightness(110%)")
+			setTimeout(() => lightAnimation(color, "all 0.3s", "brightness(70%)"), 200)
 		}
 		
-		if(evt.currentTarget.id != order[index]) gameOver();
-		else if(index + 1 == order.length) newRound();
-		
-		index++
-		
+		if(evt.currentTarget.id != order[index]) gameOver()
+		else if(index + 1 == order.length) newRound()
+		else index++
 	}
-	
-	enableColorButtons(){
-		for(let x = 0; x < colors.length; x++) { 
-			document.getElementById(colors[x]).style.pointerEvents = "auto";
-		}
-	}
-	
-	disableColorButtons(){
-		for(let x = 0; x < colors.length; x++) { 
-			document.getElementById(colors[x]).style.pointerEvents = "none";
-		}
-	}
+}
+
+function lightAnimation(color, transition, filter){
+	document.getElementById(color).style.transition = transition
+	document.getElementById(color).style.filter = filter
 }
 
 function newRound(){
-	startButton.style.display = "none";
-	
-	setTimeout(function(){
-		window.game = new Round();
-	}, 800);
+	index = 0
+	document.getElementById('start-btn').style.display = "none"
+	setTimeout(() => window.game = new Round(), 800)
 }
 
 function gameOver(){
-	swal('Game Over','', 'error').then (()=> {
-        location.reload();
-    })
+	swal('Game Over','', 'error').then (()=> { location.reload() })
 }
 
 
